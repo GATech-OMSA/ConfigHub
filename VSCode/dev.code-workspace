@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "../../Dev/Standards"
+		},
+		{
+			"path": "../../Dev/Misc"
+		},
+		{
+			"path": "../../Dev/GATech"
+		},
+		{
+			"path": "../../Dev/Cheat-Sheets"
+		},
+		{
+			"path": "../../Dev/Password Generator"
+		},
+		{
+			"path": "../../Dev/PDFTools"
+		},
+		{
+			"path": "../../Dev/USCIS"
+		},
+		{
+			"path": "../../Dev/Algorithms Data Structures"
+		},
+		{
+			"path": "../../Dev/algorithms"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,182 @@
+{
+  // ========== Visuals ==========
+  "window.autoDetectColorScheme": true,
+  "window.dialogStyle": "custom",
+  "window.nativeTabs": true, // this is great, macOS only
+  "window.title": "${rootName}", // this makes tabs more readable
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.editor.tabActionLocation": "left",
+  "workbench.fontAliasing": "antialiased",
+  //"workbench.editor.showTabs": "single",
+  "excalidraw.workspaceLibraryPath": "/Users/jimmy/Dev/Excalidraw/",
+  "explorer.autoReveal": true,
+  "workbench.editor.showIcons": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.list.smoothScrolling": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.expandMode": "singleClick",
+  "workbench.tree.indent": 10,
+  "workbench.preferredLightColorTheme": "Vitesse Dark Soft",
+  "workbench.activityBar.location": "top",
+  //"workbench.statusBar.visible": false,
+
+  // ========== Editor ========== 
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.guides.bracketPairs": "active",
+  "editor.lineNumbers": "interval",
+  "editor.renderWhitespace": "selection",
+  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 4,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.hover.sticky": true,
+  "editor.minimap.autohide": true,
+  "editor.fontFamily": "MesloLGM Nerd Font, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  // ========== Terminal Settings ==========
+  
+  "terminal.integrated.cursorBlinking": true, // Enables blinking of the terminal cursor.
+  "terminal.integrated.cursorStyle": "line", // Sets the terminal cursor style to a line.
+  "terminal.integrated.fontWeight": "300", // Sets the font weight of the terminal text to 300 (light).
+  "terminal.integrated.persistentSessionReviveProcess": "never", // Disables the revival of persistent terminal sessions.
+  "terminal.integrated.tabs.enabled": true, // Enables tabs in the integrated terminal.
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font", //"MesloLGS NF",
+  // ========== Workbench Settings ==========
+  "workbench.editor.closeOnFileDelete": true, // Automatically closes the editor tab when the corresponding file is deleted.
+  // ========== Explorer Settings ==========
+  "explorer.confirmDelete": false, // Disables the confirmation dialog when deleting files in the Explorer.
+  "explorer.confirmDragAndDrop": false, // Disables the confirmation dialog when dragging and dropping files in the Explorer.
+  "explorer.excludeGitIgnore": true,
+  "explorer.openEditors.minVisible": 1,
+  "explorer.sortOrder": "foldersNestsFiles",
+  "explorer.openEditors.visible": 5,
+  "explorer.openEditors.sortOrder": "alphabetical",
+  // ========== File Settings ==========
+  "files.dialog.defaultPath": "/Users/jimmy/Dev",
+  "files.eol": "\n", // Sets the default end-of-line character to \n (LF).
+  "files.insertFinalNewline": true, // Ensures a newline is added at the end of files upon saving.
+  //"files.simpleDialog.enable": true, // Enables the simple file dialog for opening and saving files.
+  "files.autoSave": "afterDelay",
+  // ========== Git Settings ==========
+  "git.autofetch": true, // Automatically fetches changes from the remote repository.
+  "git.confirmSync": false, // Disables the confirmation dialog when synchronizing (pull & push) changes.
+  "git.enableSmartCommit": true, // Enables smart commit, which commits all changes without specifying files.
+  "git.untrackedChanges": "separate", // Displays untracked changes separately in the Source Control view.
+  // ========== Source Control Manager (SCM) Settings ==========
+  "scm.diffDecorationsGutterWidth": 2, // Sets the width of the gutter decorations for SCM diffs.
+  // ========== Search Settings ==========
+  "search.exclude": {
+    "**/*.snap": true, // Excludes all .snap files
+    "**/*.svg": true, // Excludes all .svg files
+    "**/.git": true, // Excludes the .git directory
+    "**/.github": false, // Does not exclude the .github directory
+    "**/.ipynb": true, // Excludes the .nuxt directory
+    "**/.output": true, // Excludes the .output directory
+    "**/.pnpm": true, // Excludes the .pnpm directory
+    "**/.vscode": true, // Excludes the .vscode directory
+    "**/.yarn": true, // Excludes the .yarn directory
+    "**/__pycache__": true, // Excludes the __pycache__ directory
+    "**/.ipynb_checkpoints": true, // Excludes Jupyter notebook checkpoints
+    "**/bower_components": true, // Excludes the bower_components directory
+    "**/dist/**": true, // Excludes all files and directories under dist
+    "**/logs": true, // Excludes the logs directory
+    "**/node_modules": true, // Excludes the node_modules directory
+    "**/out/**": true, // Excludes all files and directories under out
+    "**/package-lock.json": true, // Excludes the package-lock.json file
+    "**/pnpm-lock.yaml": true, // Excludes the pnpm-lock.yaml file
+    "**/temp": true, // Excludes the temp directory
+    "**/yarn.lock": true, // Excludes the yarn.lock file
+    "**/CHANGELOG*": true, // Excludes all files starting with CHANGELOG
+    "**/LICENSE*": true, // Excludes all files starting with LICENSE
+    "**/*.log": true, // Excludes all log files
+    "**/.terraform": true, // Excludes the .terraform directory
+    "**/.aws": true, // Excludes the .aws directory
+    "**/*.tfstate": true, // Excludes all Terraform state files
+    "**/*.tfstate.backup": true, // Excludes all Terraform state backup files
+    "**/.pytest_cache": true, // Excludes the pytest cache directory
+    "**/.mypy_cache": true, // Excludes the mypy cache directory
+    "**/venv": true, // Excludes Python virtual environment directories
+    "**/.env": true, // Excludes environment files
+    "**/env": true, // Excludes env directories
+    "**/coverage": true, // Excludes coverage directories and files
+    "**/terraform.tfstate.d": true // Excludes Terraform state directories
+  },
+  // ========== Global Level Config, needs to put in User Settings ==========
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  // ========== Extension configs ==========
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.excludeLanguages": [
+    "markdown"
+  ],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "html"
+  },
+  // ESLint config: https://github.com/antfu/eslint-config
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "cSpell.showAutocompleteSuggestions": true,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.language": "en,en-US",
+  "codesnap.backgroundColor": "#000000",
+  "codesnap.containerPadding": "0px",
+  "codesnap.showWindowControls": false,
+  "codesnap.transparentBackground": true,
+  "css.lint.hexColorLength": "ignore",
+  // Debug Settings
+  "debug.onTaskErrors": "debugAnyway",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "window.restoreWindows": "preserve",
+  "cSpell.minWordLength": 4,
+  "errorLens.codeLensTemplate": "$severity $message $source",
+  "excalidraw.theme": "auto",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "jupyter.experiments.enabled": true,
+  "workbench.sideBar.location": "right",
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "poetryMonorepo.appendExtraPaths": false,
+  "cSpell.customDictionaries": {
+  "custom": { "name": "cspell-dictionary", "path": "/Users/jimmy/.vscode/spell-dictionary.txt", "addWords": true }},
+  "cSpell.dictionaries": [ "aws","dict-sql","sql","python","dict-python","typescript"
+        ,"typescriptreact","javascript","javascriptreact","html","css","json","yaml","yml","markdown",
+        "go","git","dockerfile","dict-data-science"]
+
+}

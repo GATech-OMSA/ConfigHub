@@ -1,0 +1,50 @@
+
+########### Install ###########
+# intall xcode
+xcode-select --install
+
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# set variable 
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/jimmy/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/jimmy/.zprofile 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+
+# Install pdf-expert v2.5.1
+brew install --cask https://raw.githubusercontent.com/Homebrew/homebrew-cask/6f220274e3a099bf01747c8d6080898610db81a5/Casks/pdf-expert.rb
+
+# Pin pdf-expert
+brew cu pin pdf-expert
+
+# Review
+brew cu
+
+# Restore from Bundle Backup
+bundle install --file="/Users/jimmy/Documents/Preference Backup/Brewfile_Backup"
+
+
+########### Uninstall ###########
+# uninstall home-brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+# clear zprofiles
+open ~/.zprofile
+# remove orphan directories
+sudo rm -rf /opt/homebrew/
+# review
+ls -ag /opt
+
+
+
+########### Jupyter Notebook ###########
+Jupyter Notebook
+
+# Convert Notebook to html
+jupyter nbconvert /Users/jimmy/Projects/Sakshi/Appetit-Copy1.ipynb --no-input --no-prompt
+
+jupyter notebook --generate-config
+
+
+

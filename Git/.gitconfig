@@ -1,0 +1,90 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Jimmy Jain
+	email = jimmy-jain@users.noreply.github.com
+[color]
+	diff = auto
+	ui = auto
+	status = auto
+	branch = auto	
+	
+[core]
+	editor = code --wait
+
+[alias]
+	# Status
+	s = status -s # Display a short status of the working tree
+	st = status # Display the full status of the working tree
+
+	# Commit
+	ci = commit -m # Commit changes with a message
+	cm = commit # Commit without a message (opens editor)
+	cam = commit -am # Add all changes and commit with a message
+	amend = commit --amend # Modify the last commit
+
+	# Checkout
+	co = checkout # Switch branches or restore working tree files
+	cod = checkout . -- # Discard all changes in the working directory (with safety)
+
+	# Reset
+	rh = reset HEAD # Unstage files
+	unstage = reset HEAD -- # Unstage files (alternative)
+	undo = reset HEAD~1 --mixed # Undo the last commit, keeping changes in the working directory
+	undo-commit = reset --soft HEAD^ # Undo the last commit, keeping changes staged
+
+	# Add
+	a = add # Stage changes
+	aa = add -A # Stage all changes, including new files
+	ap = add -p # Add changes in patches
+
+	# Clean
+	cdf = clean -df # Remove untracked files and directories
+
+	# Branch
+	b = branch # List, create, or delete branches
+	ba = branch -a # List all branches (local and remote)
+
+	# Pull and Push
+	pl = pull # Fetch from and integrate with another repository or a local branch
+	pr = pull --rebase # Fetch from and integrate with another repository or a local branch, but rebase instead of merge
+	ps = push # Update remote refs along with associated objects
+
+	# Log
+	l = log # Show commit logs
+	last = log -1 HEAD # Show the last commit
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit # Pretty log graph
+	lo = log --oneline --graph --decorate # Compact, graphical log
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate # Custom formatted log
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat # Detailed log
+
+	# Diff
+	d = diff # Show changes
+	ds = diff --staged # Show staged changes
+
+	# Stash
+	save = stash save # Save changes to a new stash
+	pop = stash pop # Apply the most recent stash and remove it from the stash list
+	st = stash # Stash changes
+	stp = stash pop # Pop stashed changes
+
+	# Miscellaneous
+	changes = log -p --follow -- # Show changes in a file, including past renames
+	blame = blame -c # Show who changed what in a file
+	fp = fetch --all --prune # Fetch updates and prune
+	remotes = remote -v # Show remote repository URLs
+	aliases = config --get-regexp alias # List all aliases
+	m = merge --no-ff # Merge creating a new commit object
+	rb = rebase # Reapply commits
+	rbi = rebase -i # Interactive rebase
+	cp = cherry-pick # Apply the changes introduced by some existing commits
+	wip = commit -am "WIP" # Quickly save work in progress
+
+	# Find commands
+	fb = "!f() { git branch -a --contains $1; }; f" # Find branches containing a commit
+	ft = "!f() { git describe --always --contains $1; }; f" # Find tags containing a commit
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short -S$1; }; f" # Find commits by source code
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f" # Find commits by commit message
