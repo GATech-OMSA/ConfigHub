@@ -23,7 +23,7 @@ export PAGER='less'
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Oh My Zsh Configuration
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+if [ "$TERM_PROGRAM" != "Apple_Terminal-" ]; then
     export ZSH="$HOME/.oh-my-zsh"
     plugins=(
         git
@@ -48,6 +48,7 @@ alias awsconf="$EDITOR ~/.aws/config"
 alias jupyterconf="$EDITOR ~/.jupyter/jupyter_notebook_config.py"
 
 # Navigation
+alias c="clear"
 alias dev="cd ~/Dev"
 alias downloads="cd ~/Downloads"
 alias apps="cd ~/Applications"
