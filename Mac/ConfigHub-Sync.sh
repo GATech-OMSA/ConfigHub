@@ -123,11 +123,8 @@ git_operations() {
         
         # Add README.md with repository description
         echo "# ConfigHub
-
 Centralized configuration management for development environments
-
 This repository contains my personal configuration files and setup instructions for various development tools and environments. It's designed to be easily synchronized across different machines to maintain a consistent workspace." > README.md
-        
         git add README.md
         git commit -m "Initial commit: Add README with repository description" || {
             log_message "Error: Failed to commit initial README"
@@ -136,11 +133,19 @@ This repository contains my personal configuration files and setup instructions 
     fi
 
     if [[ -n "$REMOTE_URL" ]]; then
-        git remote add origin "$REMOTE_URL" || {
-            log_message "Error: Failed to add remote"
-            exit 1
-        }
-        log_message "Added remote: $REMOTE_URL"
+        if ! git remote | grep -q "^origin$"; then
+            git remote add origin "$REMOTE_URL" || {
+                log_message "Error: Failed to add remote"
+                exit 1
+            }
+            log_message "Added remote: $REMOTE_URL"
+        fi
+    fi
+
+    # Check if there are any changes to commit
+    if git diff-index --quiet HEAD --; then
+        log_message "No changes to commit. ConfigHub is up to date."
+        return
     fi
 
     git add . || {
