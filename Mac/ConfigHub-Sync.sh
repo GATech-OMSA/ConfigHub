@@ -142,9 +142,12 @@ This repository contains my personal configuration files and setup instructions 
         fi
     fi
 
+    # Fetch the latest changes from the remote
+    git fetch origin
+
     # Check if there are any changes to commit
-    if git diff-index --quiet HEAD --; then
-        log_message "No changes to commit. ConfigHub is up to date."
+    if git diff --quiet HEAD && git diff --staged --quiet; then
+        log_message "No local changes to commit. ConfigHub is up to date."
         return
     fi
 
@@ -153,17 +156,24 @@ This repository contains my personal configuration files and setup instructions 
         exit 1
     }
 
-    git commit -m "Sync ConfigHub $(date +'%Y-%m-%d %H:%M:%S')" || {
-        log_message "Error: Failed to commit changes"
-        exit 1
-    }
-
-    if ! git push origin main 2>/dev/null && ! git push origin master 2>/dev/null; then
-        log_message "Error: Failed to push changes. Ensure the remote is set up correctly."
-        exit 1
+    # Try to commit changes, but don't exit if it fails
+    if git commit -m "Sync ConfigHub $(date +'%Y-%m-%d %H:%M:%S')"; then
+        log_message "Changes committed successfully"
+    else
+        log_message "No new changes to commit"
     fi
 
-    log_message "Successfully pushed changes to git repository"
+    # Check if we need to push
+    if git diff --quiet origin/main HEAD; then
+        log_message "No changes to push. ConfigHub is up to date with remote."
+    else
+        if git push origin HEAD; then
+            log_message "Successfully pushed changes to git repository"
+        else
+            log_message "Error: Failed to push changes. Ensure the remote is set up correctly."
+            exit 1
+        fi
+    fi
 }
 
 # Main execution
