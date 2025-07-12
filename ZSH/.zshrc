@@ -120,10 +120,10 @@ update_all() {
     echo "\nSystem update process completed!"
 }
 
-# ConfigHub Aliases
-alias chsync="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh"
-alias chsync-dry="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh --dry-run --verbose"
-alias chbackup="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh --backup ~/Desktop/ConfigHub-Backup-$(date +%Y%m%d)"
+# ConfigHub sync commands
+alias chsync="~/Documents/ConfigHub/Configs/configHub-sync.sh"
+alias chsync-dry="~/Documents/ConfigHub/Configs/configHub-sync.sh --dry-run --verbose"
+alias chbackup="~/Documents/ConfigHub/Configs/configHub-sync.sh --backup ~/Desktop/ConfigHub-Backup-$(date +%Y%m%d)"
 
 # ConfigHub Navigation
 alias chdir="cd ~/Documents/ConfigHub/Configs"
@@ -137,7 +137,7 @@ alias chdiff="cd ~/Documents/ConfigHub/Configs && git diff"
 # ConfigHub Combined operations
 chpush() {
     echo "🔄 Syncing ConfigHub and pushing to git..."
-    /Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh && \
+    ~/Documents/ConfigHub/Configs/configHub-sync.sh && \
     cd ~/Documents/ConfigHub/Configs && \
     git add . && \
     git commit -m "Sync: $(date +'%Y-%m-%d %H:%M')" && \
@@ -145,7 +145,7 @@ chpush() {
     echo "✅ ConfigHub synced and pushed!"
 }
 
-# Status check
+# ConfigHub Status check
 chstatus() {
     cd ~/Documents/ConfigHub/Configs
     echo "=== Git Status ==="
