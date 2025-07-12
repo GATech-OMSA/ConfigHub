@@ -54,6 +54,8 @@ alias downloads="cd ~/Downloads"
 alias apps="cd ~/Applications"
 alias docs="cd ~/Documents"
 alias algo="cd ~/Dev/algorithms"
+alias desktop="cd /Users/jimmy/Desktop"
+alias vs="code ."
 
 # Utility
 # alias listaliases="alias | sort | bat" # Requires 'bat' to be installed

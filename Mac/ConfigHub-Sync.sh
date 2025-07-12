@@ -51,6 +51,7 @@ load_config() {
             "$HOME/Library/Application Support/Code/User/settings.json:VSCode/code-user-settings.json"
             "$HOME/.vscode/spell-dictionary.txt:VSCode/spell-dictionary.txt"
             "$HOME/.zshrc:ZSH/.zshrc"
+            "'/Users/jimmy/Documents/Database Alpha/generate_emergency_access.sh'"
         )
     fi
 }
@@ -147,7 +148,7 @@ This repository contains my personal configuration files and setup instructions 
 
     # Check if there are any changes to commit
     if git diff --quiet HEAD && git diff --staged --quiet; then
-        log_message "No local changes to commit. ConfigHub is up to date."
+        log_message "No local changes to commit; ConfigHub is up to date."
         return
     fi
 

@@ -156,7 +156,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "jupyter.experiments.enabled": true,
   "workbench.sideBar.location": "right",
@@ -177,6 +177,11 @@
   "custom": { "name": "cspell-dictionary", "path": "/Users/jimmy/.vscode/spell-dictionary.txt", "addWords": true }},
   "cSpell.dictionaries": [ "aws","dict-sql","sql","python","dict-python","typescript"
         ,"typescriptreact","javascript","javascriptreact","html","css","json","yaml","yml","markdown",
-        "go","git","dockerfile","dict-data-science"]
+        "go",
+        "git",
+        "dockerfile",
+        "dict-data-science"
+      ],
+      "vsicons.dontShowNewVersionMessage": true
 
 }
