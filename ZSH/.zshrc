@@ -120,60 +120,38 @@ update_all() {
     echo "\nSystem update process completed!"
 }
 
+# ConfigHub Aliases
+alias chsync="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh"
+alias chsync-dry="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh --dry-run --verbose"
+alias chbackup="/Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh --backup ~/Desktop/ConfigHub-Backup-$(date +%Y%m%d)"
 
-# Performance profiling (uncomment to use)
-# zprof
+# ConfigHub Navigation
+alias chdir="cd ~/Documents/ConfigHub/Configs"
+alias chedit="code ~/.config/confighub_sync.conf"
 
+# ConfigHub Git operations
+alias chgit="cd ~/Documents/ConfigHub/Configs && git status"
+alias chlog="cd ~/Documents/ConfigHub/Configs && git log --oneline -10"
+alias chdiff="cd ~/Documents/ConfigHub/Configs && git diff"
 
-# # >>> mamba initialize >>>
-# # !! Contents within this block are managed by 'mamba init' !!
-# export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/micromamba';
-# export MAMBA_ROOT_PREFIX='/Users/jimmy/micromamba';
-# __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__mamba_setup"
-# else
-#     alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-# fi
-# unset __mamba_setup
-# # <<< mamba initialize <<<
+# ConfigHub Combined operations
+chpush() {
+    echo "🔄 Syncing ConfigHub and pushing to git..."
+    /Users/jimmy/Documents/ConfigHub/Configs/mac/configHub-sync.sh && \
+    cd ~/Documents/ConfigHub/Configs && \
+    git add . && \
+    git commit -m "Sync: $(date +'%Y-%m-%d %H:%M')" && \
+    git push && \
+    echo "✅ ConfigHub synced and pushed!"
+}
 
-# if [ "$TERM_PROGRAM" != "Apple_Terminal-" ]; then
-#   export ZSH="$HOME/.oh-my-zsh"
-#   plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)  
-#   # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/atomic.omp.json)"
-#   eval "$(oh-my-posh init zsh --config /Users/jimmy/.config/nordic-frost.omp.toml)"
-  
-#   source $ZSH/oh-my-zsh.sh
-# fi
-
-
-# # Configuration files
-# alias zshrc="code ~/.zshrc"
-# alias gitconf="code ~/.gitconfig"
-# alias condaconf="code ~/.condarc"
-# # alias vscodeconf="code ~/.vscode/settings.json"
-
-# # Jupyter and Python
-# alias jupyterconf="code ~/.jupyter/jupyter_notebook_config.py"
-# # alias pythonhistory="code ~/.python_history"
-
-# # Development directories
-# alias dev="cd ~/Dev"
-# alias downloads="cd ~/Downloads"
-
-# # Application-specific
-# alias awsconf="code ~/.aws/config"
-# alias dockerconf="code ~/.docker/config.json"
-# alias npmconfig="code ~/.npmrc"
-# alias yarnconfig="code ~/.yarnrc"
-
-# # Utility
-# alias listaliases="alias | bat"  # Assuming you have bat installed, otherwise use 'less'
-
-# # Quick access to common directories
-# alias apps="cd ~/Applications"
-# alias docs="cd ~/Documents"
-
-# # Project-specific 
-# alias algo="cd ~/Dev/algorithms"
+# Status check
+chstatus() {
+    cd ~/Documents/ConfigHub/Configs
+    echo "=== Git Status ==="
+    git status -s
+    echo -e "\n=== Recent Commits ==="
+    git log --oneline -5
+    echo -e "\n=== Last Sync ==="
+    grep "Last" README.md 2>/dev/null || echo "No sync timestamp found"
+}

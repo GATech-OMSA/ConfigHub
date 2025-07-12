@@ -1,0 +1,19 @@
+[default]
+region=us-east-1
+output=json
+
+[profile genesis]
+region=us-east-1
+output=json
+
+[profile warp-llm]
+region=us-east-1
+output=json
+
+[profile warp-accounts]
+role_arn=arn:aws:iam::975050294589:role/OrganizationAccountAccessRole
+region=us-east-1
+source_profile=genesis
+
+[profile amplify-dev]
+region=us-east-1
