@@ -3,7 +3,6 @@ anseki.vscode-color
 antfu.icons-carbon
 antfu.theme-vitesse
 bierner.color-info
-bierner.markdown-preview-github-styles
 cardinal90.multi-cursor-case-preserve
 charliermarsh.ruff
 continue.continue
@@ -30,3 +29,4 @@ streetsidesoftware.code-spell-checker
 thenikso.github-plus-theme
 usernamehw.errorlens
 vscode-icons-team.vscode-icons
+yzhang.markdown-all-in-one
