@@ -381,7 +381,7 @@ update_all() {
     
     if [ $errors -eq 0 ]; then
         echo -e "\n✅ System update process completed successfully!"
-        echo "💡 Tip: Restart your terminal to ensure all updates take effect"
+        echo "💡 Restart your terminal to ensure all updates take effect"
     else
         echo -e "\n⚠️  System update completed with $errors error(s)"
         return 1
@@ -411,14 +411,14 @@ chpush() {
 chstatus() {
     cd ~/Documents/ConfigHub/Configs || return 1
     echo "📊 === ConfigHub Status ==="
-    echo -e "\n📁 Git Status:"
+    echo -e "\n📁cd Git Status:"
     git status -s
-    echo -e "\n📝 Recent Commits:"
-    git log --oneline -5
     echo -e "\n🕐 Last Sync:"
     grep "Last" README.md 2>/dev/null || echo "No sync timestamp found"
     echo -e "\n💾 Backup Status:"
     ls -lah ../Backups 2>/dev/null | tail -5 || echo "No backups found"
+    echo -e "\n📝 Recent Commits:"
+    git log --oneline -5
 }
 
 # ==============================================================================

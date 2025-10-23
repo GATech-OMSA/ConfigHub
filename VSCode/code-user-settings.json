@@ -35,7 +35,7 @@
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
-  "editor.minimap.autohide": true,
+  "editor.minimap.autohide": "mouseover",
   "editor.fontFamily": "MesloLGM Nerd Font, Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": false,

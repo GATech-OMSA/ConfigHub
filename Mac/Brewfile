@@ -48,6 +48,7 @@ cask "rectangle"
 cask "shottr"
 cask "tradingview"
 cask "visual-studio-code"
+cask "whatsapp"
 cask "zoom"
 mas "Access", id: 6469049274
 mas "Capital One Shopping", id: 1477110326
@@ -56,7 +57,7 @@ mas "Dynaper", id: 1435296403
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
-mas "MindNode", id: 1289197285
+mas "MindNode Classic", id: 1289197285
 mas "Pages", id: 409201541
 mas "Paranoia Text Encryption Pro", id: 935278498
 mas "Perplexity", id: 6714467650
@@ -81,6 +82,7 @@ vscode "ionutvmi.path-autocomplete"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
